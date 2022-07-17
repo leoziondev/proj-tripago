@@ -1,0 +1,15 @@
+.tripList {
+  width: 480px;  
+}
+
+.tripList h2 {
+  margin-bottom: 25px;
+}
+
+.tripList li {
+  list-style: none;
+  background-color: #3b3b3b;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
