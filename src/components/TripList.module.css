@@ -13,3 +13,12 @@
   margin-top: 10px;
   border-radius: 4px;
 }
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters button {
+  flex-grow: 1;
+}
