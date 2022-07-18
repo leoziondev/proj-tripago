@@ -1,5 +1,6 @@
 .tripList {
   width: 480px;  
+  margin-top: 20px;
 }
 
 .tripList h2 {
@@ -28,6 +29,6 @@
   color: #ff4343;
   font-weight: bold;
   padding: 10px;
-  margin-top: 30px;
+  margin: 30px 0;
   border-radius: 4px;
 }
