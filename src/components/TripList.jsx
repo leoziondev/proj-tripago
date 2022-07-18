@@ -1,23 +1,11 @@
-import { useCallback, useEffect, useState } from "react"
+import { useState } from "react"
+import { useFetch } from "../hooks/useFetch"
 
 import styles from './TripList.module.css'
 
 export function TripList() {
-  const [trips, setTrips] = useState([])  
   const [url, setUrl] = useState('http://localhost:3000/trips')
-
-  const fetchTrips = useCallback(async () => {
-    const response = await fetch(url)
-    const json = await response.json()
-    
-    setTrips(json)
-  }, [url])
-
-  useEffect(() => {
-    fetchTrips()
-  },[fetchTrips])
-
-  console.log(trips)
+  const { data: trips } = useFetch(url)
 
   return (
     <div className={styles.tripList}>
@@ -37,7 +25,7 @@ export function TripList() {
       </div>
 
       <ul>
-        {trips.map(trip => (
+        {trips && trips.map(trip => (
           <li key={trip.id}>
             <p>{trip.title}</p>
             <p>{trip.price}</p>
