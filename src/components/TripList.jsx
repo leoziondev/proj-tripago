@@ -4,12 +4,12 @@ import { useFetch } from "../hooks/useFetch"
 import styles from './TripList.module.css'
 
 export function TripList() {
-  const [url, setUrl] = useState('http://localhost:3000/trips')
-  const { data: trips } = useFetch(url)
+  const [url, setUrl] = useState('http://localhost:3000/trips332')
+  const { data: trips, isPending, error } = useFetch(url)
 
   return (
     <div className={styles.tripList}>
-      <h2>TripList</h2>
+      <h2>TripList</h2>   
 
       <div className={styles.filters}>
         <button
@@ -22,7 +22,10 @@ export function TripList() {
         >
           All Trips
         </button>
-      </div>
+      </div>  
+
+      {isPending && <div className={styles.message}>Loading Trips...</div>}
+      {error && <div className={styles.message}>{error}</div>}    
 
       <ul>
         {trips && trips.map(trip => (
